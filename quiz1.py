@@ -4,14 +4,6 @@ if 5 > 2:
   print("YES")
 
 
-#This is a comment
-
-
-''This is a comment
-written in 
-more than just one line''
-
-
 carname = "Volvo"
 
 x=50
@@ -28,7 +20,7 @@ print(z)
 
 x,y,z = "Orange", "Banana", "Cherry"
 
- x = y = z = "Orange"
+x = y = z = "Orange"
 
 def myfunc():
   global x
