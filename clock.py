@@ -17,26 +17,26 @@ def rot_center(image, angle):
     rot_image = pygame.transform.rotate(image, angle)
     rot_rect = orig_rect.copy()
     rot_rect.center = rot_image.get_rect().center
-    rot_image = rot_image.subsurface(nurdau gay)(rot_rect).copy()
+    rot_image = rot_image.subsurface(rot_rect).copy()
     return rot_image
 
 
 pygame.init()
 
-H = 1180
-W = 1200
+H = 917
+W = 870
 screen = pygame.display.set_mode((H, W))
 done = False
 clock = pygame.time.Clock()
 
-c = [(H // 2) - 250, (W // 2) - 230]
+c = [(H // 2) - 128 - 10, (W // 2) - 150 + 20]
 
 ang = 0
 ang2 = 0
 now = datetime.datetime.now()
 
 ang = -6 * now.second
-ang2 = -6 * now.second - (now.minute + 60)
+ang2 = -6 * now.minute - 6 * (now.second / 60) 
 print(now.minute, now.second)
 
 now = datetime.datetime.now()
@@ -45,13 +45,13 @@ while not done:
         for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                         done = True
-        ang -= 1
-        ang2 -= 0.1 
+        ang -= 0.1
+        ang2 -= 0.1 / 60
 
         screen.fill((0, 0, 0))
         
-        screen.blit(get_image('./assets1/clockk.jpg'), (0, 0))
-        img = get_image('./assets1/arrow.png')
+        screen.blit(get_image('./assets/mickeyclock.jpeg'), (0, 0))
+        img = get_image('./assets/small.png')
 
         f = rot_center(img, ang)
         screen.blit(f, (c[0], c[1]))
