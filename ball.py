@@ -45,4 +45,3 @@ while not done:
     screen.blit(image, (x,y))
     pygame.display.flip()
     clock.tick(60)
-    #pygame.draw.rect(screen, (255,0,0), pygame.Rect(x, y, 60, 30)) #cord, len, width
